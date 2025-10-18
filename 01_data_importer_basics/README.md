@@ -66,6 +66,29 @@ MATCH (p:Person)-[r:ACTED_IN]->(m:Movie)
 RETURN p.name, r.role, m.title
 LIMIT 25;
 
+
+---
+
+## 🎬 Challenge: Add DIRECTED Relationship
+
+**Objective:**  
+Add the `DIRECTED` relationship between existing `Person` and `Movie` nodes using `directed.csv`.
+
+### Steps Performed
+1. Uploaded `directed.csv` into [Neo4j Data Importer](https://workspace.neo4j.io/workspace/import)
+2. Added a **DIRECTED** relationship between **Person → Movie**
+3. Mapped columns:
+   - `person_tmdbId` → `Person.id`
+   - `movieId` → `Movie.id`
+4. Ran the import successfully
+
+### Verification Query
+```cypher
+MATCH (p:Person)-[d:DIRECTED]->(m:Movie)
+RETURN p.name AS Director, m.title AS Movie
+LIMIT 25;
+
+
 ```cypher
 MATCH (m:Movie)
 RETURN m

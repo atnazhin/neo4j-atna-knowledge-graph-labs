@@ -93,3 +93,30 @@ LIMIT 25;
 MATCH (m:Movie)
 RETURN m
 LIMIT 25;
+
+# Lesson 1: Importing Data into Neo4j using the Data Importer
+
+In this lesson, I explored how to use the **Neo4j Data Importer** to bring CSV data into a graph database and build connections between entities.  
+The goal was to create a small graph that includes **Person** and **Movie** nodes linked by **ACTED_IN** and **DIRECTED** relationships.
+
+---
+
+## 🧱 Step 1 – Import Person Nodes
+
+**Objective:**  
+Import data about people from a CSV file and create `Person` nodes.
+
+**Steps Performed**
+1. Opened [Neo4j Data Importer](https://workspace.neo4j.io/workspace/import)  
+2. Uploaded `persons.csv`  
+3. Created the **Person** node label  
+4. Set `id` as the unique identifier  
+5. Mapped columns → properties (`name`, `age`, `city`)  
+6. Ran the import successfully  
+
+**Verification Query**
+```cypher
+MATCH (p:Person)
+RETURN p
+LIMIT 25;
+

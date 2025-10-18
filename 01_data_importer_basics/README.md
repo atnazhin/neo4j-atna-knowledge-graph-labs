@@ -19,3 +19,28 @@ In this lab, I practiced using the **Neo4j Data Importer** to load CSV data, def
 MATCH (p:Person)
 RETURN p
 LIMIT 25;
+
+---
+
+## 🎬 Challenge: Add Movie Nodes
+
+**Objective:**  
+Import movie data from a CSV file and create `Movie` nodes in the database.
+
+### Steps Performed
+1. Uploaded `movies.csv` to the Data Importer  
+2. Added a new **Movie** node label  
+3. Set `movieId` as the unique identifier  
+4. Mapped columns → properties:
+   - `movieId` → `id`
+   - `title` → `title`
+   - `year` → `released`
+   - `genre` → `genre`
+   - `rating` → `rating`
+5. Ran the import successfully
+
+### Verification Query
+```cypher
+MATCH (m:Movie)
+RETURN m
+LIMIT 25;

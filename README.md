@@ -19,3 +19,4 @@ By the end of this lesson, the Neo4j database contained:
 - 🔗 `ACTED_IN` relationships (from `acted_in.csv`)
 
 This provides the foundation for modeling real-world networks in Neo4j and prepares for more complex relationship types in future lessons.
+| 💡 | Challenge: [Global Earthquake–Tsunami Risk Graph](./01_data_importer_basics/README.md#-challenge-global-earthquake–tsunami-risk-graph) | Modeled and imported a real-world dataset to build `Earthquake`, `Location`, and `TsunamiRisk` nodes with `OCCURRED_IN` and `HAS_TSUNAMI_RISK` relationships. |

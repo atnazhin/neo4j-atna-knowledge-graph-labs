@@ -26,3 +26,9 @@ By the end of this lesson, the Neo4j database contained:
 
 This provides the foundation for modeling real-world networks in Neo4j and prepares for more complex relationship types.
 | 2 | Challenge: [Global Earthquake–Tsunami Risk Graph](./01_data_importer_basics/README.md#-challenge-global-earthquake–tsunami-risk-graph) | Modeled and imported a real-world dataset to build `Earthquake`, `Location`, and `TsunamiRisk` nodes with `OCCURRED_IN` and `HAS_TSUNAMI_RISK` relationships. |
+## 📚 Lessons
+
+| # | Lesson Title | Description |
+|---|---------------|--------------|
+| 1 | [Importing Nodes from CSV using Data Importer](./01_data_importer_basics/README.md) | Imported a CSV file into Neo4j, created the `Person` node label, and verified data using Cypher. |
+| 💡 | [Challenge: Global Earthquake–Tsunami Risk Graph](./01_data_importer_basics/README.md#-challenge-global-earthquake–tsunami-risk-graph) | Modeled and imported a real-world dataset to build `Earthquake`, `Location`, and `TsunamiRisk` nodes connected by `OCCURRED_IN` and `HAS_TSUNAMI_RISK` relationships. |

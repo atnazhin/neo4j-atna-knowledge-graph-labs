@@ -17,12 +17,14 @@ By the end of this project, the Neo4j database contained:
 - 🧑‍🤝‍🧑 `Person` nodes (from `persons.csv`)
 - 🎬 `Movie` nodes (from `movies.csv`)
 - 🔗 `ACTED_IN` relationships (from `acted_in.csv`)
-  ## 📚 Lessons
+  ## 📚 Projects
 
 | # | Project Title | Description |
 |---|---------------|--------------|
 | 1 | [Importing Nodes from CSV using Data Importer](./01_data_importer_basics/README.md) | Imported a CSV file into Neo4j, created the `Person` node label, and verified data using Cypher. |
 |  | [Challenge: Global Earthquake–Tsunami Risk Graph](./01_data_importer_basics/README.md#-challenge-global-earthquake–tsunami-risk-graph) | Modeled and imported a real-world dataset to build `Earthquake`, `Location`, and `TsunamiRisk` nodes connected by `OCCURRED_IN` and `HAS_TSUNAMI_RISK` relationships. |
+| 2 | [Project 2: Cypher Fundamentals](./Project_02_Cypher_Fundamentals/README.md) | Query, filter, create, update, and delete graph data using Cypher on the Movies dataset. |
+
 This provides the foundation for modeling real-world networks in Neo4j and prepares for more complex relationship types.
 ## 🖼️ Visual Results  
 

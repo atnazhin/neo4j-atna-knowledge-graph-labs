@@ -1,6 +1,6 @@
 #Project 1: Importing Nodes from CSV using Neo4j Data Importer
 
-In this lab, I practiced using the **Neo4j Data Importer** to load CSV data, define node labels, and set a unique identifier.
+In this project, I practiced using the **Neo4j Data Importer** to load CSV data, define node labels, and set a unique identifier.
 
 ---
 

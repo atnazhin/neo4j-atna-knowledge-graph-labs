@@ -120,3 +120,58 @@ MATCH (p:Person)
 RETURN p
 LIMIT 25;
 
+---
+
+## 🌍 Challenge: Global Earthquake–Tsunami Risk Graph
+
+**Objective:**  
+Apply what you learned about the Neo4j Data Importer to build a custom graph from a real-world dataset.
+
+**Dataset:**  
+[Global Earthquake–Tsunami Risk Assessment Dataset (Kaggle)](https://www.kaggle.com/datasets)  
+This dataset contains 782 earthquake records (2001–2022), including magnitude, depth, location, and tsunami risk indicators.
+
+---
+
+### 🧩 Graph Model
+
+
+**Nodes**
+- 🌋 `Earthquake` — magnitude, depth, significance, year, month  
+- 📍 `Location` — latitude, longitude  
+- 🌊 `TsunamiRisk` — tsunami flag (0 = No Tsunami, 1 = Tsunami)
+
+**Relationships**
+- `OCCURRED_IN`: connects earthquakes to their coordinates  
+- `HAS_TSUNAMI_RISK`: connects earthquakes to tsunami classification  
+
+---
+
+### 🧱 Steps Performed
+1. Uploaded `earthquake_data_tsunami.csv` to Neo4j Data Importer  
+2. Created three node labels:
+   - `Earthquake` (unique ID: generated from row number)
+   - `Location` (unique ID: latitude)
+   - `TsunamiRisk` (unique ID: tsunami)
+3. Defined relationships:
+   - `Earthquake → Location` via `OCCURRED_IN`
+   - `Earthquake → TsunamiRisk` via `HAS_TSUNAMI_RISK`
+4. Mapped columns to properties and ran the import successfully  
+
+---
+
+### 🧮 Verification Queries
+
+**Node and relationship counts**
+```cypher
+MATCH (n) RETURN labels(n), count(*) ORDER BY count(*) DESC;
+### Earthquake–Location links
+MATCH (e:Earthquake)-[:OCCURRED_IN]->(l:Location)
+RETURN e.year, e.magnitude, l.latitude, l.longitude
+LIMIT 10;
+### Tsunami risk links
+MATCH (e:Earthquake)-[:HAS_TSUNAMI_RISK]->(t:TsunamiRisk)
+RETURN e.magnitude, e.year, t.tsunami
+LIMIT 10;
+
+

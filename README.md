@@ -1,6 +1,6 @@
 # neo4j-atna-knowledge-graph-labs
 Hands-on projects and notes exploring Neo4j and knowledge graph data modelling.
-
+---
 # Project 1: Importing Data into Neo4j using the Data Importer
 
 In this project, I explored how to use the **Neo4j Data Importer** to bring CSV data into a graph database and build connections between entities.  
@@ -17,18 +17,67 @@ By the end of this project, the Neo4j database contained:
 - 🧑‍🤝‍🧑 `Person` nodes (from `persons.csv`)
 - 🎬 `Movie` nodes (from `movies.csv`)
 - 🔗 `ACTED_IN` relationships (from `acted_in.csv`)
-  ## 📚 Projects
 
-| # | Project Title | Description |
-|---|---------------|--------------|
-| 1 | [Importing Nodes from CSV using Data Importer](./01_data_importer_basics/README.md) | This provides the foundation for modeling real-world networks in Neo4j and prepares for more complex relationship types.Imported a CSV file into Neo4j, created the `Person` node label, and verified data using Cypher. |
-|  | [Challenge: Global Earthquake–Tsunami Risk Graph](./01_data_importer_basics/README.md#-challenge-global-earthquake–tsunami-risk-graph) | Modeled and imported a real-world dataset to build `Earthquake`, `Location`, and `TsunamiRisk` nodes connected by `OCCURRED_IN` and `HAS_TSUNAMI_RISK` relationships. |
-| 2 | [Project 2: Cypher Fundamentals](./Project_02_Cypher_Fundamentals/README.md) | Query, filter, create, update, and delete graph data using Cypher on the Movies dataset. |
+  ---
 
-This provides the foundation for modeling real-world networks in Neo4j and prepares for more complex relationship types.
+# Project 2: Cypher Fundamentals  
+
+This project focused on learning and applying **Cypher**, Neo4j’s declarative graph query language.  
+I created, updated, and deleted nodes and relationships while practicing powerful graph queries such as filtering, aggregation, and pattern matching.
+
+**Key Highlights**
+- Queried and filtered nodes by properties (e.g., movies released after 2010)
+- Used pattern matching to discover complex relationships  
+- Practiced `MERGE`, `MATCH`, `WHERE`, and `RETURN` commands  
+- Updated nodes dynamically with `SET` and removed properties with `REMOVE`  
+- Learned to delete nodes and relationships safely
+
+# Project 3: Graph Data Modeling Fundamentals  
+
+In this project, I demonstrated my ability to design and refactor **graph data models** in Neo4j.  
+Using the Movie domain dataset, I designed an initial schema, tested queries, and performed iterative refactoring to support new use cases and improve query performance.
+
+**Objectives**
+- Model movies, people, and users with appropriate labels and relationships  
+- Refactor nodes into specialized labels (`Actor`, `Director`)  
+- Normalize `Genre` and `Language` data  
+- Add an intermediate `Role` node to represent characters in movies  
+- Demonstrate Cypher queries for insights and validation  
+
+**Core Entities**
+| Label | Description |
+|--------|-------------|
+| `Movie` | A film with title, release date, and genres |
+| `Person` | A real person involved in movie production |
+| `Actor` | Specialized label for people who act in movies |
+| `Director` | Specialized label for people who direct movies |
+| `User` | A user who rates movies |
+| `Genre` | Movie category (e.g., Drama, Comedy) |
+| `Role` | Represents a character played by an actor |
+
+**Key Relationships**
+| Relationship | Description |
+|---------------|-------------|
+| `(:Actor)-[:ACTED_IN]->(:Movie)` | Links an actor to the movie they acted in |
+| `(:Director)-[:DIRECTED]->(:Movie)` | Connects a director to their movie |
+| `(:User)-[:RATED]->(:Movie)` | Represents user ratings for movies |
+| `(:Movie)-[:IN_GENRE]->(:Genre)` | Categorizes a movie by genre |
+| `(:Actor)-[:PLAYED]->(:Role)-[:IN_MOVIE]->(:Movie)` | Adds intermediate character representation |
+
+---
+
 ## 🖼️ Visual Results  
 
-Below are the complete Neo4j visual results — showing the full workflow from importing data, creating relationships, running Cypher queries, and visualizing the graphs for both the **Movie dataset** and the **Global Earthquake–Tsunami Risk Challenge**.
+Below are the complete Neo4j visual results that capture the **end-to-end graph modeling workflow** — from data import to schema refinement and query validation.  
+
+These screenshots illustrate how each project evolved through key stages:
+1. Importing and mapping raw data into Neo4j  
+2. Creating and validating relationships between nodes  
+3. Running Cypher queries to extract insights  
+4. Refactoring and visualizing the final graph model  
+
+Together, they demonstrate the practical application of **Neo4j Fundamentals**, **Cypher Fundamentals**, and **Graph Data Modeling Fundamentals** — across both the **Movie Graph** and the **Global Earthquake–Tsunami Risk Challenge** domains.
+
 
 | Screenshot | Description |
 |-------------|--------------|
@@ -46,20 +95,36 @@ Below are the complete Neo4j visual results — showing the full workflow from i
 | ![Query Earthquakes](./visual_results/queryEarthquakes.png) | Query results showing the `Earthquake` and `Location` link visualization. |
 | ![Query Directed](./visual_results/queryDirected.png) | Viewing directed relationships between earthquakes and tsunami risks. |
 | ![Query](./visual_results/query.png) | Cypher result graph verifying the connections between users, ratings, and movies. |
+| ![Instance Model](./Project_03_Graph_Data_Modeling/visual_results/instance_model.png) | Initial model showing `Person`, `Movie`, and `Genre` nodes before refactoring. |
+| ![Refactored Model](./Project_03_Graph_Data_Modeling/visual_results/refactored_model.png) | Model after refactoring with `Actor`, `Director`, and `Genre` nodes. |
+| ![Query Results](./Project_03_Graph_Data_Modeling/visual_results/query_results.png) | Cypher query results showing actors, roles, and their movies. |
+| ![Schema After Refactor](./Project_03_Graph_Data_Modeling/visual_results/schema_after_refactor.png) | Final schema visualization after refactoring and normalization. |
 
 ---
 
 ### ✅ Summary  
 
-This visual sequence captures:  
-- Importing CSV datasets into Neo4j  
-- Mapping node labels and defining relationships  
-- Running Cypher queries for validation  
+
+This project demonstrates:
+- Translating use cases into a functional graph model  
+- Iterative model refactoring using Cypher  
+- Creating specialized node labels and relationships  
+- Designing flexible, query-efficient graph structures  
+- Applying best practices for Neo4j data modeling   
 - Building two connected graph models:
   - 🎬 **Movie–Person–User Graph**  
   - 🌎 **Global Earthquake–Tsunami Risk Graph**  
 
 ---
+## 📚 Projects Overview  
 
+| # | Project Title | Description |
+|---|---------------|--------------|
+| 1 | [Importing Nodes from CSV using Data Importer](./01_data_importer_basics/README.md) | Importing and mapping data from CSV to Neo4j nodes and relationships. |
+|   | [Challenge: Global Earthquake–Tsunami Risk Graph](./01_data_importer_basics/README.md#-challenge-global-earthquake–tsunami-risk-graph) | Modeled `Earthquake`, `Location`, and `TsunamiRisk` nodes and relationships. |
+| 2 | [Project 2: Cypher Fundamentals](./Project_02_Cypher_Fundamentals/README.md) | Query, filter, create, update, and delete data using Cypher. |
+| 3 | [Project 3: Graph Data Modeling Fundamentals](./Project_03_Graph_Data_Modeling/README.md) | Designed and refactored a graph data model for the Movie domain using Neo4j. |
+
+---
 ### 💾 Commit Message Suggestion  
 

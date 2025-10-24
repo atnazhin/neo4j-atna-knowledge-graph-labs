@@ -1,12 +1,12 @@
 # neo4j-atna-knowledge-graph-labs
-Hands-on projects and notes exploring Neo4j and knowledge graph data modelling.
+Hands-on projects and notes exploring **Neo4j** and **Knowledge Graph Data Modeling**.
 ---
 # Project 1: Importing Data into Neo4j using the Data Importer
 
 In this project, I explored how to use the **Neo4j Data Importer** to bring CSV data into a graph database and build connections between entities.  
 The goal was to create a small graph that includes **Person** and **Movie** nodes linked by **ACTED_IN** relationships.
 
-Through this exercise, I learned how to:
+### Key Learnings
 - Upload and map CSV files to node labels (`Person`, `Movie`)
 - Define unique identifiers for nodes
 - Map column data to properties
@@ -20,7 +20,7 @@ By the end of this project, the Neo4j database contained:
 
   ---
 
-# Project 2: Cypher Fundamentals  
+## Project 2: Cypher Fundamentals  
 
 This project focused on learning and applying **Cypher**, Neo4j’s declarative graph query language.  
 I created, updated, and deleted nodes and relationships while practicing powerful graph queries such as filtering, aggregation, and pattern matching.
@@ -32,7 +32,7 @@ I created, updated, and deleted nodes and relationships while practicing powerfu
 - Updated nodes dynamically with `SET` and removed properties with `REMOVE`  
 - Learned to delete nodes and relationships safely
 
-# Project 3: Graph Data Modeling Fundamentals  
+## Project 3: Graph Data Modeling Fundamentals  
 
 In this project, I demonstrated my ability to design and refactor **graph data models** in Neo4j.  
 Using the Movie domain dataset, I designed an initial schema, tested queries, and performed iterative refactoring to support new use cases and improve query performance.
@@ -63,6 +63,26 @@ Using the Movie domain dataset, I designed an initial schema, tested queries, an
 | `(:User)-[:RATED]->(:Movie)` | Represents user ratings for movies |
 | `(:Movie)-[:IN_GENRE]->(:Genre)` | Categorizes a movie by genre |
 | `(:Actor)-[:PLAYED]->(:Role)-[:IN_MOVIE]->(:Movie)` | Adds intermediate character representation |
+
+---
+
+## Project 4: Intermediate Cypher Queries
+
+This project advanced my Neo4j Cypher expertise by introducing **intermediate query concepts**, including filtering, result control, traversal, pipelining, subqueries, and parameterization.  
+Each concept was implemented as an individual `.cypher` script and visualized in Neo4j Browser.
+
+### Focus Areas
+- **Filtering Queries** – Used `WHERE` clauses with logical operators to refine datasets.  
+- **Controlling Results** – Applied `ORDER BY`, `LIMIT`, and projections to manage returned data.  
+- **Graph Traversal** – Explored variable-length patterns to connect actors, roles, and movies.  
+- **Pipelining Queries** – Combined aggregation and filtering to compute insights efficiently.  
+- **Subqueries** – Used `CALL {}` blocks to modularize query logic and summarize movie roles.  
+- **Using Parameters** – Demonstrated reusable parameterized Cypher for dynamic inputs.
+
+### Outcomes
+- Produced modular, reusable Cypher scripts under `/cypher_scripts`.  
+- Verified and visualized results through the `/visual_results` screenshots.  
+- Showcased performance-focused Cypher design principles for scalable querying.
 
 ---
 
@@ -99,6 +119,12 @@ Together, they demonstrate the practical application of **Neo4j Fundamentals**, 
 | ![Refactored Model](./Project_03_Graph_Data_Modeling/visual_results/refactored_model.png) | Model after refactoring with `Actor`, `Director`, and `Genre` nodes. |
 | ![Query Results](./Project_03_Graph_Data_Modeling/visual_results/query_results.png) | Cypher query results showing actors, roles, and their movies. |
 | ![Schema After Refactor](./Project_03_Graph_Data_Modeling/visual_results/schema_after_refactor.png) | Final schema visualization after refactoring and normalization. |
+| ![Filtering Queries](./visual_results/filtering_queries.png) | Demonstrates filtering movies by genre, release year, or actor attributes. |
+| ![Controlling Results](./visual_results/controlling_results.cypher.png) | Shows ordering, limiting, and projecting query results using `ORDER BY`, `LIMIT`, and `RETURN`. |
+| ![Graph Traversal](./visual_results/graph_traversal.cypher.png) | Displays traversal between `Actor`, `Role`, and `Movie` nodes with variable-length paths. |
+| ![Pipelining Queries](./visual_results/pipelining_queries.cypher.png) | Illustrates query pipelining for aggregated insights such as movie counts per actor. |
+| ![Subqueries](./visual_results/subqueries.cypher.png) | Demonstrates the use of subqueries to group movies and roles for each actor. |
+| ![Using Parameters](./visual_results/parameter.cypher.png) | Executes a parameterized Cypher query to dynamically retrieve data for a given actor. |
 
 
 ---
@@ -125,10 +151,10 @@ This project demonstrates:
 |   | [Challenge: Global Earthquake–Tsunami Risk Graph](./01_data_importer_basics/README.md#-challenge-global-earthquake–tsunami-risk-graph) | Modeled `Earthquake`, `Location`, and `TsunamiRisk` nodes and relationships. |
 | 2 | [Project 2: Cypher Fundamentals](./Project_02_Cypher_Fundamentals/README.md) | Query, filter, create, update, and delete data using Cypher. |
 | 3 | [Project 3: Graph Data Modeling Fundamentals](./Project_03_Graph_Data_Modeling/README.md) | Designed and refactored a graph data model for the Movie domain using Neo4j. |
-
+| 4 | [Project 4: Intermediate Cypher Queries](./Project_04_Intermediate_Cypher_Queries/README.md) | Explored filtering, controlling results, graph traversal, pipelining, subqueries, and parameterized queries in Neo4j Cypher. |
 
 ---
-### 💾 Commit Message Suggestion  
+ 
 ### 💬 Author
 **Dr. Rose Yemson**  
 PhD | Knowledge Graph & Data Modeling Enthusiast  

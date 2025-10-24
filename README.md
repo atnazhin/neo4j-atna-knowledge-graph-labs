@@ -99,7 +99,7 @@ Together, they demonstrate the practical application of **Neo4j Fundamentals**, 
 | ![Refactored Model](./Project_03_Graph_Data_Modeling/visual_results/refactored_model.png) | Model after refactoring with `Actor`, `Director`, and `Genre` nodes. |
 | ![Query Results](./Project_03_Graph_Data_Modeling/visual_results/query_results.png) | Cypher query results showing actors, roles, and their movies. |
 | ![Schema After Refactor](./Project_03_Graph_Data_Modeling/visual_results/schema_after_refactor.png) | Final schema visualization after refactoring and normalization. |
-| ![Intermediate Cypher](./Project_04_Intermediate_Cypher_Queries/visual_results/graph_traversal.png) | Advanced traversal query connecting actors and movies. |
+
 
 ---
 
@@ -125,7 +125,7 @@ This project demonstrates:
 |   | [Challenge: Global Earthquake–Tsunami Risk Graph](./01_data_importer_basics/README.md#-challenge-global-earthquake–tsunami-risk-graph) | Modeled `Earthquake`, `Location`, and `TsunamiRisk` nodes and relationships. |
 | 2 | [Project 2: Cypher Fundamentals](./Project_02_Cypher_Fundamentals/README.md) | Query, filter, create, update, and delete data using Cypher. |
 | 3 | [Project 3: Graph Data Modeling Fundamentals](./Project_03_Graph_Data_Modeling/README.md) | Designed and refactored a graph data model for the Movie domain using Neo4j. |
-| 4 | [Project 4: Intermediate Cypher Queries](./Project_04_Intermediate_Cypher_Queries/README.md) | Applied intermediate Cypher querying skills such as filtering, traversal, subqueries, and pipelining to extract deeper insights from graph data. |
+
 
 ---
 ### 💾 Commit Message Suggestion  
